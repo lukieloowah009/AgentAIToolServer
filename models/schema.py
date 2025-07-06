@@ -9,6 +9,10 @@ class Message(BaseModel):
 class AgentRequest(BaseModel):
     """Request model for agent chat endpoint"""
     messages: List[Message] = Field(..., description="List of message objects")
+
+class SimpleAgentRequest(BaseModel):
+    """Simplified request model for agent chat endpoint that takes just the message content"""
+    message: str = Field(..., description="The user's message content")
     
 class AgentResponse(BaseModel):
     """Response model for agent chat endpoint"""

@@ -10,4 +10,3 @@ LLM_API_BASE_URL = os.getenv("LLM_API_BASE_URL", "http://localhost:11434")  # Ba
 
 # API keys for tools
 WEATHER_API_KEY = os.getenv("WEATHER_API_KEY", "your_api_key_here")
-CURRENCY_API_KEY = os.getenv("CURRENCY_API_KEY", "your_api_key_here")

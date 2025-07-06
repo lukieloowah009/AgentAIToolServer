@@ -18,8 +18,8 @@ A proof-of-concept implementation of an Agent AI system with tool-calling capabi
 ### Prerequisites
 
 - Python 3.9+
-- Local Llama 3.2 model running
-- API keys for external services (e.g., weather API)
+- Local Llama 3.2 model running (see [Setting up Llama 3.2](#setting-up-llama-3.2) below)
+- API keys for external services (see [API Keys](#api-keys) below)
 
 ### Installation
 
@@ -61,6 +61,47 @@ This project follows a microservice-like architecture:
 - LiteLLM handles communication with the LLM
 - MCP Server manages tool registration and execution
 - Each tool is implemented as a separate module
+
+## Setting up Llama 3.2
+
+This project uses Llama 3.2 running locally via Ollama. To set it up:
+
+1. Install Ollama from [ollama.com](https://ollama.com)
+
+2. Pull the Llama 3.2 model:
+   ```bash
+   ollama pull llama3.2
+   ```
+
+3. Run the model:
+   ```bash
+   ollama run llama3.2
+   ```
+
+By default, the application expects Ollama to be running at `http://localhost:11434`.
+
+## API Keys
+
+### OpenWeatherMap API Key
+
+To use the weather functionality, you'll need an OpenWeatherMap API key:
+
+1. Create a free account at [OpenWeatherMap](https://openweathermap.org/)
+2. Navigate to your account > API Keys section
+3. Create a new API key or use the default one provided
+4. Add the API key to your `.env` file:
+   ```
+   WEATHER_API_KEY=your_openweathermap_api_key_here
+   ```
+
+Note: New API keys may take a few hours (up to 2 hours) to activate.
+
+### Exiting the Virtual Environment
+
+When you're done working with the project, you can exit the virtual environment by running:
+```bash
+deactivate
+```
 
 ## Project Structure
 
